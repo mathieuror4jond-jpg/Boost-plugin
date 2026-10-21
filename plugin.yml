@@ -1,0 +1,16 @@
+name: BoostPlugin
+version: '1.0.0'
+main: com.boostplugin.BoostPlugin
+api-version: '26.3'
+description: Amulettes de boost liees a une poupee
+commands:
+  boostgive:
+    description: Donne un objet du plugin (admin)
+    usage: /boostgive <joueur> <fragment|core|template|charm|doll> [boost]
+    permission: boostplugin.admin
+  boosts:
+    description: Affiche les recettes
+    usage: /boosts
+permissions:
+  boostplugin.admin:
+    default: op

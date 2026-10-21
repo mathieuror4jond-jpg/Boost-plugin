@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.boostplugin'
+version = '1.0.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://repo.papermc.io/repository/maven-public/' }
+}
+
+dependencies {
+    // Version vue sur Paper 26.3 beta. Si Gradle ne la trouve pas, regarde la doc Paper
+    // (docs.papermc.io > Developing plugins) pour le numero exact.
+    compileOnly 'io.papermc.paper:paper-api:26.3.build.143-beta'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
